@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+  
   def index
   end
 
@@ -15,6 +16,10 @@ class GroupsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+    @members = @group.users
   end
 
   def update
