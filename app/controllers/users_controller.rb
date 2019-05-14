@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def index
-    if params[:groupId].present?
-      @group = Group.find(params[:groupId])
+    if params[:group_id].present?
+      @group = Group.find(params[:group_id])
       @ids = @group.users.ids
       @users = User.where.not(id: @ids).where('(name LIKE(?)) and (id != ?)', "%#{params[:keyword]}%", "#{current_user.id}")
     else
