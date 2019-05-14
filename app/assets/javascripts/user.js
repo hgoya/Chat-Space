@@ -37,7 +37,7 @@ $(function(){
     $.ajax({
       url: '/users',
       type: 'GET',
-      data: { keyword: input, groupId: group_id },
+      data: { keyword: input, group_id: group_id },
       dataType: 'json'
     })
     .done(function(user) {
