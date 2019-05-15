@@ -1,0 +1,66 @@
+
+// サイドバ-
+.chat-side {
+  height: 100vh;
+  min-height: 100vh;
+  width: 300px;
+  float: left;
+  position: relative;
+    &__user {
+      background-color: #253141;
+      height: 15%;
+      width: 300px;
+      position: relative;
+      box-sizing: border-box;
+    }
+}
+
+// サイドバー左上
+.user__profile {
+  height: 50px;
+  line-height: 50px;
+  width: 300px;
+  margin: auto 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+    .user__name {
+      font-size: 16px;
+      font-weight: bold;
+      color: $white;
+      margin: 0 20px;
+      display: inline-block;
+  }
+}
+// アイコン部分
+.new-group {
+  float: right;
+  color: $white;
+  line-height: 50px;
+}
+
+.edit-user {
+  float: right;
+  color: $white;
+  line-height: 50px;
+  padding: 0 10px 0 0;
+}
+
+// サイドバーグループ名部分
+.chat-side__groups {
+  height: 85%;
+  background-color: $navy;
+  overflow: scroll;
+    &-list {
+      padding: 20px 20px 40px;
+    }
+    .chat-side__group-name {
+      font-size: 15px;
+      color: $white;
+      padding-bottom: 5px;
+    }
+    .chat-side__group-message {
+      font-size: 11px;
+      color: $white;
+    }
+}

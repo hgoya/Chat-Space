@@ -1,25 +1,24 @@
-.wrapper
+= render partial: "chat-side"
+.chat-main
+  .chat-main__header
+    .chat-main__group
+      .chat-main__group-name
+        = @group.name
+      = link_to edit_group_path(@group) do
+        .chat-main__group-edit-btn Edit
+      .chat-main__group-member
+        Member:
+        = @members
+  .chat-main__body
+    = render partial: "message", collection: @messages
 
-  = render 'shared/side_bar'
-
-  .chat
-    .header
-      .left-header
-        .left-header__title
-          = @group.name
-        %ul.left-header__members
-          Member：
-          = @members
-      .right-header
-        .right-header__button
-          Edit
-    .messages
-      = render @messages
-    .form
-      = form_for [@group, @message], html: {id: 'new_message'} do |f|
-        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
-        .form__mask
-          = f.label :image, class: 'form__mask__image' do
-            = fa_icon 'picture-o', class: 'icon'
-            = f.file_field :image, class: 'hidden'
-        = f.submit 'Send', class: 'form__submit'
+  .chat-main__footer
+    = form_for [@group, @message], html: {class: "send-btn"} do |f|
+      .chat-main__footer-body
+        .chat-main__footer-form
+          = f.text_field :content, class: "form__message", placeholder: "type a message"
+          = f.label :image, class: "icon" do
+            = fa_icon "picture-o", class: "fa"
+            =f.file_field :image, class: "file_button"
+        .chat-main__footer-submit
+          = f.submit :Send, class: "send"

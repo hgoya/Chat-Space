@@ -1,0 +1,48 @@
+// チャット画面フッター部分
+.chat-main__footer {
+  background-color: #B8C3C7;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  width: 100%;
+    &-body {
+      margin: 20px 40px;
+      position: relative;
+    }
+    &-submit {
+      float: right;
+    }
+}
+
+.form__message {
+  height: 50px;
+  line-height: 50px;
+  background-color: $white;
+  padding: 15px 10px;
+  border: none;
+  box-sizing: border-box;
+  width: calc(100% - 130px);
+}
+
+.icon {
+  position: absolute;
+  right: 150px;
+  bottom: 15px;
+}
+
+.file_button {
+  display: none;
+}
+
+.send {
+  color: $white;
+  background-color: $aqua;
+  height: 50px;
+  text-align: center;
+  border: none;
+  width: 100px;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
