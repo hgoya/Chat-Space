@@ -65,4 +65,30 @@ $(document).on('turbolinks:load', function() {
     clearInterval(interval);
   }}, 5000);
 
+  // 自動更新
+  var interval = setInterval(function() {
+    if (window.location.href.match(/\/group\/\d+\/message/)) {
+      var reloadMessages = function() {
+        last_message_id = $('.chat-main__body-list:last').data('message-id') || 0;
+    $.ajax({
+      url: location.href,
+      type: 'GET',
+      dataType: 'json',
+      data: {id: last_message_id}
+    })
+    .done(function(messages) {
+      var insertHTML = '';
+      data.forEach(function(message) {
+            insertHTML += buildHTML(message);
+          });
+        $('.chat-main__body').append(insertHTML);
+        $('.chat-main__body').animate({scrollTop: $('.chat-main__body')[0].scrollHeight});
+        })
+        .fail(function() {
+          alert('error');
+        })
+  } else {
+    clearInterval(interval);
+  }}, 5000);
+  
 });
