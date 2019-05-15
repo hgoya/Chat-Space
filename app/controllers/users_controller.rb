@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   def index
     if params[:group_id].present?
       @group = Group.find(params[:group_id])
