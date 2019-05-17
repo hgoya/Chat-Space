@@ -32,7 +32,6 @@ $(document).on('turbolinks:load', function() {
     member_list.append(html);
   }
 
-  // サーバー側との動作
   $("#user-search-field").on("keyup", function() {
     var input = $("#user-search-field").val();
     var group_id = $('.chat__group_id').val();
@@ -58,7 +57,7 @@ $(document).on('turbolinks:load', function() {
       alert("error");
     })
   });
-  // HTML上での動作 以下で追加された要素にイベントを起こす。ajaxとスコープが違う。
+
     $(document).on("click", ".user-search-add", function() {
       var user_id = $(this).data("user-id");
       var name = $(this).data("user-name");

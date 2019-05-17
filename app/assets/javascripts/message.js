@@ -12,7 +12,7 @@ $(document).on('turbolinks:load', function() {
           ${image}`
         return html
     };
-    // メッセージ送信後の処理
+
   $('.send-btn').on('submit', function(e) {
     e.preventDefault();
     var formData = new FormData(this);
@@ -38,7 +38,7 @@ $(document).on('turbolinks:load', function() {
     });
     $('.chat-main__body').animate({scrollTop: $('.chat-main__body')[0].scrollHeight});
   });
-  // 自動更新機能
+
   var interval = setInterval(function() {
     if (window.location.href.match(/\/groups\/\d+\/messages/)) {
       var last_message_id = $('.chat-main__body-list:last').data('message-id') || 0;
@@ -65,7 +65,7 @@ $(document).on('turbolinks:load', function() {
     clearInterval(interval);
   }}, 5000);
 
-  // 自動更新
+
   var interval = setInterval(function() {
     if (window.location.href.match(/\/group\/\d+\/message/)) {
       var reloadMessages = function() {

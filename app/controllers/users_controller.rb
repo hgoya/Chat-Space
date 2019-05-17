@@ -1,10 +1,8 @@
 class UsersController < ApplicationController
   
   def index
-    # groupのidを取得
     if params[:group_id].present?
       @group = Group.find(params[:group_id])
-      # groupに所属しているuserのidを配列で取得
       @ids = @group.users.ids
       @users = User.where.not(id: @ids).where('(name LIKE(?)) and (id != ?)', "%#{params[:keyword]}%", "#{current_user.id}")
     else
