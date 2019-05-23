@@ -2,7 +2,7 @@ app_path = File.expand_path('../../../', __FILE__)
 
 ENV['BUNDLE_GEMFILE'] = rails_root + "/Gemfile"
 
-worker_processes 2
+worker_processes 1
 
 working_directory "#{app_path}/current"
 listen "#{app_path}/shared/tmp/sockets/unicorn.sock"
