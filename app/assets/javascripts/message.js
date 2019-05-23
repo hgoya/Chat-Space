@@ -56,7 +56,7 @@ $(document).on('turbolinks:load', function() {
         insertHTML += buildHTML(message);
       });
     $('.chat-main__body').append(insertHTML);
-    // $('.chat-main__body').animate({scrollTop: $('.chat-main__body')[0].scrollHeight});
+    $('.chat-main__body').animate({scrollTop: $('.chat-main__body')[0].scrollHeight});
        })
     .fail(function(data){
       alert('error');
