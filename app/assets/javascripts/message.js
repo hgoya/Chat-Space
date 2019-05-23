@@ -28,6 +28,7 @@ $(document).on('turbolinks:load', function() {
     .done(function(data){
       var html = buildHTML(data);
       $('.chat-main__body').append(html);
+      $('.chat-main__body').animate({scrollTop: $('.chat-main__body')[0].scrollHeight}, 'fast');
       $('.send-btn')[0].reset();
     })
     .fail(function() {
@@ -36,8 +37,6 @@ $(document).on('turbolinks:load', function() {
     .always(function() {
       $('.send').prop('disabled', false);
     });
-    // $('.chat-main__body').animate({scrollTop: $('.chat-main__body')[0].scrollHeight});
-    $('.chat-main__body').animate({scrollTop: $('.chat-main__body').scrollHeight}, 500, "swing");
   });
 
   var interval = setInterval(function() {
@@ -55,10 +54,9 @@ $(document).on('turbolinks:load', function() {
       var insertHTML = '';
       data.forEach(function(message) {
         insertHTML += buildHTML(message);
+        $('.chat-main__body').animate({scrollTop: $('.chat-main__body')[0].scrollHeight}, 'fast');
       });
     $('.chat-main__body').append(insertHTML);
-    // $('.chat-main__body').animate({scrollTop: $('.chat-main__body')[0].scrollHeight});
-    $('.chat-main__body').animate({scrollTop: $('.chat-main__body').scrollHeight}, 500, "swing");
        })
     .fail(function(data){
       alert('error');
