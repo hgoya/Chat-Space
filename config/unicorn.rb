@@ -41,13 +41,13 @@
 #   defined?(ActiveRecord::Base) && ActiveRecord::Base.establish_connection
 # end
 
-rails_root = File.expand_path('../../', __FILE__)
+rails_root = File.expand_path('../../../', __FILE__)
 
 worker_processes 2
 working_directory rails_root
 
-listen "#{rails_root}/tmp/sockets/unicorn.sock"
-pid "#{rails_root}/tmp/pids/unicorn.pid"
+listen "#{rails_root}/shared/tmp/sockets/unicorn.sock"
+pid "#{rails_root}/shared/tmp/pids/unicorn.pid"
 
 before_fork do |server, worker|
   Signal.trap 'TERM' do
