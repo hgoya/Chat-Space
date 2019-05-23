@@ -30,8 +30,9 @@
             %input{ name: "group[user_ids][]", type: "hidden", value: "#{member.id}" }
             %p.chat-group-user__name
               = member.name
-            = link_to 'edit_group_path', class: "user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn", remote: true do
-              削除
+            - unless current_user.id == member.id
+              = link_to 'edit_group_path', class: "user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn", remote: true do
+                削除
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
     .chat-group-form__field--right
