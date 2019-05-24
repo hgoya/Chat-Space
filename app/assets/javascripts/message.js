@@ -28,7 +28,8 @@ $(document).on('turbolinks:load', function() {
     .done(function(data){
       var html = buildHTML(data);
       $('.chat-main__body').append(html);
-      $('.chat-main__body').animate({scrollTop: $('.chat-main__body')[0].scrollHeight}, 'fast');
+      // $('.chat-main__body').animate({scrollTop: $('.chat-main__body')[0].scrollHeight}, 'fast');
+      $('.chat-main__body').animate({scrollTop: ($('.chat-main__body')[0]).scrollHeight}, 'fast');
       $('.send-btn')[0].reset();
     })
     .fail(function() {
@@ -54,7 +55,8 @@ $(document).on('turbolinks:load', function() {
       var insertHTML = '';
       data.forEach(function(message) {
         insertHTML += buildHTML(message);
-        $('.chat-main__body').animate({scrollTop: $('.chat-main__body')[0].scrollHeight}, 'fast');
+        // $('.chat-main__body').animate({scrollTop: $('.chat-main__body')[0].scrollHeight}, 'fast');
+        $('.chat-main__body').animate({scrollTop: ($('.chat-main__body')[0]).scrollHeight}, 'fast');
       });
     $('.chat-main__body').append(insertHTML);
        })
